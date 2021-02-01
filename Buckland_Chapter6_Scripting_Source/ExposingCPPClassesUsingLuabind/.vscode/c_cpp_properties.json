@@ -4,10 +4,10 @@
       "name": "Win32",
       "includePath": [
         "${workspaceFolder}/**",
-        "${workspaceFolder}/../boost_1_75_0/**",
-        "${workspaceFolder}/../Common/**",
-        "${workspaceFolder}/../Common/lua-5.0/include/**",
-        "${workspaceFolder}/../Common/luabind/**"
+        "${workspaceFolder}/../../boost_1_75_0/**",
+        "${workspaceFolder}/../../Common/**",
+        "${workspaceFolder}/../../Common/lua-5.0/include/**",
+        "${workspaceFolder}/../../Common/luabind/**"
       ],
       "defines": ["_DEBUG", "UNICODE", "_UNICODE"],
       "windowsSdkVersion": "10.0.18362.0",
