@@ -7,11 +7,11 @@
       "command": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\g++.exe",
       "args": [
         "-I",
-        "${workspaceFolder}/../../boost_1_75_0",
+        "C:/boost_1_75_0",
         "-I",
         "${workspaceFolder}/../../Common",
         "-I",
-        "${workspaceFolder}/../../Common/lua-5.0/include",
+        "${workspaceFolder}/../../Common/lua-5.1.3/include",
         "-I",
         "${workspaceFolder}/../../Common/luabind",
         "-g",
