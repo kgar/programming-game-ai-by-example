@@ -18,8 +18,8 @@ namespace WestWorldWithWoman
                 await Task.Delay(800);
             }
 
-            System.Console.WriteLine("Press any key to continue...");
-            System.Console.Read();
+            Console.WriteLine("Press any key to continue...");
+            Console.Read();
         }
     }
 }

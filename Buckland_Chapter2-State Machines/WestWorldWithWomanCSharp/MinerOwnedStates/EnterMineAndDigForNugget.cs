@@ -2,8 +2,8 @@ namespace WestWorldWithWoman
 {
     public class EnterMineAndDigForNugget : IState<Miner>
     {
-        private static EnterMineAndDigForNugget _instance = null;
-        private static readonly object padlock = new object();
+        private static EnterMineAndDigForNugget _instance;
+        private static readonly object padlock = new();
 
         private EnterMineAndDigForNugget() { }
 
@@ -22,36 +22,36 @@ namespace WestWorldWithWoman
             }
         }
 
-        public void Enter(Miner miner)
+        public void Enter(Miner entity)
         {
-            if (miner.Location != Location.Goldmine)
+            if (entity.Location != Location.Goldmine)
             {
-                miner.Speak("Walkin' to the goldmine");
-                miner.ChangeLocation(Location.Goldmine);
+                entity.Speak("Walkin' to the goldmine");
+                entity.ChangeLocation(Location.Goldmine);
             }
         }
 
-        public void Execute(Miner miner)
+        public void Execute(Miner entity)
         {
-            miner.AddToGoldCarried(1);
-            miner.IncreaseFatigue();
+            entity.AddToGoldCarried(1);
+            entity.IncreaseFatigue();
 
-            miner.Speak("Pickin' up a nugget");
+            entity.Speak("Pickin' up a nugget");
 
-            if (miner.PocketsFull())
+            if (entity.PocketsFull())
             {
-                miner.ChangeState(VisitBankAndDepositGold.Instance);
+                entity.ChangeState(VisitBankAndDepositGold.Instance);
             }
 
-            if (miner.Thirsty())
+            if (entity.Thirsty())
             {
-                miner.ChangeState(QuenchThirst.Instance);
+                entity.ChangeState(QuenchThirst.Instance);
             }
         }
 
-        public void Exit(Miner miner)
+        public void Exit(Miner entity)
         {
-            miner.Speak("Ah'm leavin' the goldmine with mah pockets full o' sweet gold");
+            entity.Speak("Ah'm leavin' the goldmine with mah pockets full o' sweet gold");
         }
     }
 }

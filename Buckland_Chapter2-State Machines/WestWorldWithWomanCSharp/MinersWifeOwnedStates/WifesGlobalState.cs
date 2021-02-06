@@ -4,7 +4,7 @@ namespace WestWorldWithWoman
 {
     public sealed class WifesGlobalState : IState<MinersWife>
     {
-        private static WifesGlobalState _instance = null;
+        private static WifesGlobalState _instance;
         private readonly Random _random;
         private static readonly object padlock = new();
 
@@ -28,11 +28,11 @@ namespace WestWorldWithWoman
             }
         }
 
-        public void Execute(MinersWife wife)
+        public void Execute(MinersWife entity)
         {
             if (_random.NextDouble() < 0.1)
             {
-                wife.StateMachine.ChangeState(VisitBathroom.Instance);
+                entity.StateMachine.ChangeState(VisitBathroom.Instance);
             }
         }
     }

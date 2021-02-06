@@ -2,7 +2,7 @@ namespace WestWorldWithWoman
 {
     public class QuenchThirst : IState<Miner>
     {
-        private static QuenchThirst _instance = null;
+        private static QuenchThirst _instance;
         private static readonly object padlock = new object();
 
         public QuenchThirst() { }
@@ -22,22 +22,22 @@ namespace WestWorldWithWoman
             }
         }
 
-        public void Enter(Miner miner)
+        public void Enter(Miner entity)
         {
-            if (miner.Location != Location.Saloon)
+            if (entity.Location != Location.Saloon)
             {
-                miner.ChangeLocation(Location.Saloon);
-                miner.Speak("Boy, ah sure is thusty! Walking to the saloon");
+                entity.ChangeLocation(Location.Saloon);
+                entity.Speak("Boy, ah sure is thusty! Walking to the saloon");
             }
         }
 
-        public void Execute(Miner miner)
+        public void Execute(Miner entity)
         {
-            if (miner.Thirsty())
+            if (entity.Thirsty())
             {
-                miner.BuyAndDrinkAWhiskey();
-                miner.Speak("That's mighty fine sippin liquer");
-                miner.ChangeState(EnterMineAndDigForNugget.Instance);
+                entity.BuyAndDrinkAWhiskey();
+                entity.Speak("That's mighty fine sippin liquer");
+                entity.ChangeState(EnterMineAndDigForNugget.Instance);
             }
             else
             {
@@ -46,9 +46,9 @@ namespace WestWorldWithWoman
             }
         }
 
-        public void Exit(Miner miner)
+        public void Exit(Miner entity)
         {
-            miner.Speak("Leaving the saloon, feelin' good");
+            entity.Speak("Leaving the saloon, feelin' good");
         }
 
     }

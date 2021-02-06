@@ -2,7 +2,7 @@ namespace WestWorldWithWoman
 {
     public class VisitBankAndDepositGold : IState<Miner>
     {
-        private static VisitBankAndDepositGold _instance = null;
+        private static VisitBankAndDepositGold _instance;
         private static readonly object padlock = new object();
 
         public VisitBankAndDepositGold() { }
@@ -22,37 +22,37 @@ namespace WestWorldWithWoman
             }
         }
 
-        public void Enter(Miner miner)
+        public void Enter(Miner entity)
         {
-            if (miner.Location != Location.Bank)
+            if (entity.Location != Location.Bank)
             {
-                miner.Speak("Goin' to the bank. Yes siree");
-                miner.ChangeLocation(Location.Bank);
+                entity.Speak("Goin' to the bank. Yes siree");
+                entity.ChangeLocation(Location.Bank);
             }
         }
 
-        public void Execute(Miner miner)
+        public void Execute(Miner entity)
         {
-            miner.AddToWealth(miner.GoldCarried);
-            miner.GoldCarried = 0;
+            entity.AddToWealth(entity.GoldCarried);
+            entity.GoldCarried = 0;
 
-            miner.Speak($"Depositing gold. Total savings now: {miner.MoneyInBank}");
+            entity.Speak($"Depositing gold. Total savings now: {entity.MoneyInBank}");
 
-            if (miner.MoneyInBank >= Miner.ComfortLevel)
+            if (entity.MoneyInBank >= Miner.ComfortLevel)
             {
-                miner.Speak("WooHoo! Rich enough for now. Back home to mah li'lle lady");
-                miner.ChangeState(GoHomeAndSleepTilRested.Instance);
+                entity.Speak("WooHoo! Rich enough for now. Back home to mah li'lle lady");
+                entity.ChangeState(GoHomeAndSleepTilRested.Instance);
             }
             else
             {
-                miner.ChangeState(EnterMineAndDigForNugget.Instance);
+                entity.ChangeState(EnterMineAndDigForNugget.Instance);
             }
 
         }
 
-        public void Exit(Miner miner)
+        public void Exit(Miner entity)
         {
-            miner.Speak("Leavin' the bank");
+            entity.Speak("Leavin' the bank");
         }
     }
 }

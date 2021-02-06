@@ -23,9 +23,9 @@ namespace WestWorldWithWoman
 
         internal void Speak(string text)
         {
-            System.Console.ForegroundColor = ConsoleColor.Green;
-            System.Console.WriteLine($"{EntityFunctions.GetNameOfEntity(Name)}: {text}");
-            System.Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"{EntityFunctions.GetNameOfEntity(Name)}: {text}");
+            Console.ResetColor();
         }
     }
 }

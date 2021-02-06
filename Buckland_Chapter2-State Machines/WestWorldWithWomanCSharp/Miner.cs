@@ -13,10 +13,10 @@ namespace WestWorldWithWoman
 
         public StateMachine<Miner> StateMachine { get; set; }
         public Location Location { get; private set; } = Location.Shack;
-        public int GoldCarried { get; set; } = 0;
-        public int MoneyInBank { get; set; } = 0;
-        private int _thirst = 0;
-        private int _fatigue = 0;
+        public int GoldCarried { get; set; }
+        public int MoneyInBank { get; set; }
+        private int _thirst;
+        private int _fatigue;
 
 
 

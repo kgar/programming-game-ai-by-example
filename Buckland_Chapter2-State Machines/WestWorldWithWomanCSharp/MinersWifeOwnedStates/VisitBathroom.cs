@@ -1,11 +1,9 @@
-using System;
-
 namespace WestWorldWithWoman
 {
 
     public class VisitBathroom : IState<MinersWife>
     {
-        private static VisitBathroom _instance = null;
+        private static VisitBathroom _instance;
         private static readonly object padlock = new();
 
         public static VisitBathroom Instance
@@ -23,20 +21,20 @@ namespace WestWorldWithWoman
             }
         }
 
-        public void Enter(MinersWife wife)
+        public void Enter(MinersWife entity)
         {
-            wife.Speak("Walkin' to the can. Need to powda mah pretty li'lle nose");
+            entity.Speak("Walkin' to the can. Need to powda mah pretty li'lle nose");
         }
 
-        public void Execute(MinersWife wife)
+        public void Execute(MinersWife entity)
         {
-            wife.Speak("Ahhhhhh! Sweet relief!");
-            wife.StateMachine.RevertToPreviousState();
+            entity.Speak("Ahhhhhh! Sweet relief!");
+            entity.StateMachine.RevertToPreviousState();
         }
 
-        public void Exit(MinersWife wife)
+        public void Exit(MinersWife entity)
         {
-            wife.Speak("Leavin' the Jon");
+            entity.Speak("Leavin' the Jon");
         }
     }
 }

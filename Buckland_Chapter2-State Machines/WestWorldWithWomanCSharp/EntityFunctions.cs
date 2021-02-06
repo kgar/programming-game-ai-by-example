@@ -1,5 +1,3 @@
-using System;
-
 namespace WestWorldWithWoman
 {
     public static class EntityFunctions

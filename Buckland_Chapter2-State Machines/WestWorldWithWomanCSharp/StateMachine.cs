@@ -31,14 +31,11 @@ namespace WestWorldWithWoman
 
         public void ChangeState(IState<TEntity> newState)
         {
-            if (newState == null)
-            { throw new ArgumentNullException(nameof(newState)); }
-
             PreviousState = CurrentState;
 
             CurrentState?.Exit(_owner);
 
-            CurrentState = newState;
+            CurrentState = newState ?? throw new ArgumentNullException(nameof(newState));
 
             CurrentState.Enter(_owner);
         }

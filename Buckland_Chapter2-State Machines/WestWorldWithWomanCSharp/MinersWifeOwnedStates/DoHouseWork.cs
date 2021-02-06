@@ -5,7 +5,7 @@ namespace WestWorldWithWoman
 
     public sealed class DoHouseWork : IState<MinersWife>
     {
-        private static DoHouseWork _instance = null;
+        private static DoHouseWork _instance;
         private readonly Random _random;
         private static readonly object padlock = new();
 
@@ -29,18 +29,18 @@ namespace WestWorldWithWoman
             }
         }
 
-        public void Execute(MinersWife wife)
+        public void Execute(MinersWife entity)
         {
             switch (_random.Next(0, 2))
             {
                 case 0:
-                    wife.Speak("Moppin' the floor");
+                    entity.Speak("Moppin' the floor");
                     break;
                 case 1:
-                    wife.Speak("Washin' the dishes");
+                    entity.Speak("Washin' the dishes");
                     break;
                 case 2:
-                    wife.Speak("Makin' the bed");
+                    entity.Speak("Makin' the bed");
                     break;
             }
         }
