@@ -1,35 +1,48 @@
 {
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "build",
+      "command": "dotnet",
       "type": "process",
-      "label": "C/C++: cl.exe build active file",
-      "command": "cl.exe",
       "args": [
-        "/I",
-        "C:/boost_1_75_0",
-        "/I",
-        "${workspaceFolder}/../../Common",
-        "/I",
-        "${workspaceFolder}/../../Common/lua-5.1.3/include",
-        "/I",
-        "${workspaceFolder}/../../Common/luabind",
-        "/Zi",
-        "/EHsc",
-        "/nologo",
-        "/Fe:",
-        "${workspaceFolder}\\ai.exe",
-        "*.cpp"
+        "build",
+        "${workspaceFolder}/WestWorld1.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
       ],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      },
-      "problemMatcher": ["$msCompile"],
+      "problemMatcher": "$msCompile",
       "group": {
         "kind": "build",
         "isDefault": true
-      },
-      "detail": "compiler: cl.exe"
+      }
+    },
+    {
+      "label": "publish",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "publish",
+        "${workspaceFolder}/WestWorld1.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "watch",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "watch",
+        "run",
+        "${workspaceFolder}/WestWorld1.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
     }
   ]
 }
