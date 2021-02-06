@@ -36,7 +36,7 @@ namespace WestWorldWithWoman
 
             PreviousState = CurrentState;
 
-            CurrentState.Exit(_owner);
+            CurrentState?.Exit(_owner);
 
             CurrentState = newState;
 

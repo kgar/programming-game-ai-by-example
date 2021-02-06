@@ -31,6 +31,7 @@ namespace WestWorldWithWoman
         public void Execute(MinersWife wife)
         {
             wife.Speak("Ahhhhhh! Sweet relief!");
+            wife.StateMachine.RevertToPreviousState();
         }
 
         public void Exit(MinersWife wife)

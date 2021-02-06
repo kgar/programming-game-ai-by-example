@@ -25,6 +25,7 @@ namespace WestWorldWithWoman
         {
             System.Console.ForegroundColor = ConsoleColor.Green;
             System.Console.WriteLine($"{EntityFunctions.GetNameOfEntity(Name)}: {text}");
+            System.Console.ResetColor();
         }
     }
 }

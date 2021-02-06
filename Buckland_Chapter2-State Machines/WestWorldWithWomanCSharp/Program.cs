@@ -7,11 +7,13 @@ namespace WestWorldWithWoman
     {
         static async Task Main(string[] args)
         {
-            var miner = new Miner(EntityName.MinerBob);
+            var bob = new Miner(EntityName.MinerBob);
+            var elsa = new MinersWife(EntityName.Elsa);
 
             for (int i = 0; i < 20; i++)
             {
-                miner.Update();
+                bob.Update();
+                elsa.Update();
 
                 await Task.Delay(800);
             }
