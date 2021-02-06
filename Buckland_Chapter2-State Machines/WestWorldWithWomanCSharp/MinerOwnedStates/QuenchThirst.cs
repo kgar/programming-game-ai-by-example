@@ -3,7 +3,7 @@ namespace WestWorldWithWoman
     public class QuenchThirst : IState<Miner>
     {
         private static QuenchThirst _instance;
-        private static readonly object padlock = new object();
+        private static readonly object padlock = new();
 
         public QuenchThirst() { }
 

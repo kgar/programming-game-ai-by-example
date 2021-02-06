@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 
 namespace WestWorldWithWoman
 {
-    class Program
+    internal static class Program
     {
-        static async Task Main(string[] args)
+        private static async Task Main()
         {
             var bob = new Miner(EntityName.MinerBob);
             var elsa = new MinersWife(EntityName.Elsa);
@@ -15,7 +15,7 @@ namespace WestWorldWithWoman
                 bob.Update();
                 elsa.Update();
 
-                await Task.Delay(800);
+                await Task.Delay(800).ConfigureAwait(false);
             }
 
             Console.WriteLine("Press any key to continue...");

@@ -3,7 +3,7 @@ namespace WestWorldWithWoman
     public enum Location
     {
         Shack,
-        Goldmine, 
+        Goldmine,
         Bank,
         Saloon
     }

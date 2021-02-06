@@ -3,7 +3,7 @@ namespace WestWorldWithWoman
     public class GoHomeAndSleepTilRested : IState<Miner>
     {
         private static GoHomeAndSleepTilRested _instance;
-        private static readonly object padlock = new object();
+        private static readonly object padlock = new();
 
         public GoHomeAndSleepTilRested() { }
 

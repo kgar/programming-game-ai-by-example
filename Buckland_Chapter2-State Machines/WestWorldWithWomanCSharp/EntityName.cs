@@ -1,6 +1,7 @@
 namespace WestWorldWithWoman
 {
-    public enum EntityName {
+    public enum EntityName
+    {
         MinerBob,
         Elsa
     }
