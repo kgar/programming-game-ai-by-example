@@ -2,7 +2,7 @@ namespace WestWorldWithWoman
 {
     public enum EntityName
     {
-        MinerBob,
-        Elsa
+        MinerBob = 0,
+        Elsa = 1
     }
 }

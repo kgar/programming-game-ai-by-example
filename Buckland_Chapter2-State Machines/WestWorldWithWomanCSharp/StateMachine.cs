@@ -13,7 +13,6 @@ namespace WestWorldWithWoman
         public StateMachine(TEntity owner)
         {
             _owner = owner;
-
         }
 
         public void Update()

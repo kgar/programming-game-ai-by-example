@@ -5,8 +5,6 @@ namespace WestWorldWithWoman
         private static VisitBankAndDepositGold _instance;
         private static readonly object padlock = new();
 
-        public VisitBankAndDepositGold() { }
-
         public static VisitBankAndDepositGold Instance
         {
             get
@@ -47,7 +45,6 @@ namespace WestWorldWithWoman
             {
                 entity.ChangeState(EnterMineAndDigForNugget.Instance);
             }
-
         }
 
         public void Exit(Miner entity)

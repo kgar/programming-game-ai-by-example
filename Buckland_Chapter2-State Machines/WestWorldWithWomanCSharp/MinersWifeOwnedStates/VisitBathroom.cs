@@ -1,6 +1,5 @@
 namespace WestWorldWithWoman
 {
-
     public class VisitBathroom : IState<MinersWife>
     {
         private static VisitBathroom _instance;

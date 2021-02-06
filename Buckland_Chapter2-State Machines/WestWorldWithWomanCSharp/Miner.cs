@@ -12,13 +12,11 @@ namespace WestWorldWithWoman
         public const int TirednessThreshold = 5;
 
         public StateMachine<Miner> StateMachine { get; set; }
-        public Location Location { get; private set; } = Location.Shack;
+        public Location Location { get; private set; }
         public int GoldCarried { get; set; }
         public int MoneyInBank { get; set; }
         private int _thirst;
         private int _fatigue;
-
-
 
         public Miner(EntityName name) : base(name)
         {

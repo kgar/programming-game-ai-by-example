@@ -2,7 +2,6 @@ using System;
 
 namespace WestWorldWithWoman
 {
-
     public sealed class DoHouseWork : IState<MinersWife>
     {
         private static DoHouseWork _instance;

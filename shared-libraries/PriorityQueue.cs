@@ -42,7 +42,7 @@ namespace SharedLibraries
             int parentIndex = 0;
             while (true)
             {
-                int leftChildIndex = parentIndex * 2 + 1;
+                int leftChildIndex = (parentIndex * 2) + 1;
                 if (leftChildIndex > lastIndex) break;
 
                 int rightChildIndex = leftChildIndex + 1;
@@ -77,10 +77,10 @@ namespace SharedLibraries
 
             for (int i = 0; i < _data.Count; ++i)
             {
-                builder.Append(_data[i].ToString() + " ");
+                builder.Append(_data[i].ToString()).Append(' ');
             }
 
-            builder.Append("count = " + _data.Count);
+            builder.Append("count = ").Append(_data.Count);
 
             return builder.ToString();
         }
@@ -91,8 +91,8 @@ namespace SharedLibraries
             int lastIndex = _data.Count - 1;
             for (int parentIndex = 0; parentIndex < _data.Count; ++parentIndex)
             {
-                int leftChildIndex = 2 * parentIndex + 1;
-                int rightChildIndex = 2 * parentIndex + 2;
+                int leftChildIndex = (2 * parentIndex) + 1;
+                int rightChildIndex = (2 * parentIndex) + 2;
 
                 if (leftChildIndex <= lastIndex && _data[parentIndex].CompareTo(_data[leftChildIndex]) > 0)
                 {

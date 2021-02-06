@@ -5,7 +5,7 @@ namespace WestWorldWithWoman
     public class MinersWife : BaseGameEntity
     {
         public StateMachine<MinersWife> StateMachine { get; set; }
-        public Location Location { get; set; } = Location.Shack;
+        public Location Location { get; set; }
 
         public MinersWife(EntityName name) : base(name)
         {

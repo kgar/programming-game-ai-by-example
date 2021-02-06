@@ -5,8 +5,6 @@ namespace WestWorldWithWoman
         private static GoHomeAndSleepTilRested _instance;
         private static readonly object padlock = new();
 
-        public GoHomeAndSleepTilRested() { }
-
         public static GoHomeAndSleepTilRested Instance
         {
             get

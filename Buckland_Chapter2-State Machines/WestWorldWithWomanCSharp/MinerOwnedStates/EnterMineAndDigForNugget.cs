@@ -1,6 +1,6 @@
 namespace WestWorldWithWoman
 {
-    public class EnterMineAndDigForNugget : IState<Miner>
+    public sealed class EnterMineAndDigForNugget : IState<Miner>
     {
         private static EnterMineAndDigForNugget _instance;
         private static readonly object padlock = new();

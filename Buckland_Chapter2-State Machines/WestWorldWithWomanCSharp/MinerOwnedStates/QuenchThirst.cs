@@ -5,8 +5,6 @@ namespace WestWorldWithWoman
         private static QuenchThirst _instance;
         private static readonly object padlock = new();
 
-        public QuenchThirst() { }
-
         public static QuenchThirst Instance
         {
             get
@@ -50,6 +48,5 @@ namespace WestWorldWithWoman
         {
             entity.Speak("Leaving the saloon, feelin' good");
         }
-
     }
 }
