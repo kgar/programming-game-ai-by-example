@@ -1,6 +1,6 @@
 namespace WestWorldWithWoman
 {
-    public class EnterMineAndDigForNugget : IStateOld
+    public class EnterMineAndDigForNugget : IState<Miner>
     {
         private static EnterMineAndDigForNugget _instance = null;
         private static readonly object padlock = new object();
@@ -38,11 +38,13 @@ namespace WestWorldWithWoman
 
             miner.Speak("Pickin' up a nugget");
 
-            if (miner.PocketsFull()) {
+            if (miner.PocketsFull())
+            {
                 miner.ChangeState(VisitBankAndDepositGold.Instance);
             }
 
-            if (miner.Thirsty()) {
+            if (miner.Thirsty())
+            {
                 miner.ChangeState(QuenchThirst.Instance);
             }
         }

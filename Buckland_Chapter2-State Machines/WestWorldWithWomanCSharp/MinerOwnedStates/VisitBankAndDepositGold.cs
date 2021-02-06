@@ -1,6 +1,6 @@
 namespace WestWorldWithWoman
 {
-    public class VisitBankAndDepositGold : IStateOld
+    public class VisitBankAndDepositGold : IState<Miner>
     {
         private static VisitBankAndDepositGold _instance = null;
         private static readonly object padlock = new object();

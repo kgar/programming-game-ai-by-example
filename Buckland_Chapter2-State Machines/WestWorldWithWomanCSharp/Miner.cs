@@ -11,21 +11,24 @@ namespace WestWorldWithWoman
         //above this value a miner is sleepy
         public const int TirednessThreshold = 5;
 
+        public StateMachine<Miner> StateMachine { get; set; }
         public Location Location { get; private set; } = Location.Shack;
         public int GoldCarried { get; set; } = 0;
         public int MoneyInBank { get; set; } = 0;
         private int _thirst = 0;
         private int _fatigue = 0;
-        private IStateOld _currentState = GoHomeAndSleepTilRested.Instance;
 
 
-        public Miner(EntityName name) : base(name) { }
 
-        public void ChangeState(IStateOld newState)
+        public Miner(EntityName name) : base(name)
         {
-            _currentState.Exit(this);
-            _currentState = newState;
-            _currentState.Enter(this);
+            StateMachine = new StateMachine<Miner>(this);
+            StateMachine.ChangeState(GoHomeAndSleepTilRested.Instance);
+        }
+
+        public void ChangeState(IState<Miner> newState)
+        {
+            StateMachine.ChangeState(newState);
         }
 
         public void AddToGoldCarried(int val)
@@ -58,12 +61,8 @@ namespace WestWorldWithWoman
 
         public void Update()
         {
-            _thirst += 1;
-
-            if (_currentState != null)
-            {
-                _currentState.Execute(this);
-            }
+            _thirst++;
+            StateMachine.CurrentState?.Execute(this);
         }
 
         public void IncreaseFatigue() => _fatigue++;

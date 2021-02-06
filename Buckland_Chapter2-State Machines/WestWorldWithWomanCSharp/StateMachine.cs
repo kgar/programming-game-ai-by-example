@@ -15,7 +15,6 @@ namespace WestWorldWithWoman
             _owner = owner;
 
         }
-        
 
         public void Update()
         {
@@ -30,7 +29,7 @@ namespace WestWorldWithWoman
             ChangeState(PreviousState);
         }
 
-        private void ChangeState(IState<TEntity> newState)
+        public void ChangeState(IState<TEntity> newState)
         {
             if (newState == null)
             { throw new ArgumentNullException(nameof(newState)); }

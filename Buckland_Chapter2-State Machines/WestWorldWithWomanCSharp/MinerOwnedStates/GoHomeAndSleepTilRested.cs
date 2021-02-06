@@ -1,6 +1,6 @@
 namespace WestWorldWithWoman
 {
-    public class GoHomeAndSleepTilRested : IStateOld
+    public class GoHomeAndSleepTilRested : IState<Miner>
     {
         private static GoHomeAndSleepTilRested _instance = null;
         private static readonly object padlock = new object();

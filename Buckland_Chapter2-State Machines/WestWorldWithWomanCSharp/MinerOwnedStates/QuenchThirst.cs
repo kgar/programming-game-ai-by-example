@@ -1,6 +1,6 @@
 namespace WestWorldWithWoman
 {
-    public class QuenchThirst : IStateOld
+    public class QuenchThirst : IState<Miner>
     {
         private static QuenchThirst _instance = null;
         private static readonly object padlock = new object();
