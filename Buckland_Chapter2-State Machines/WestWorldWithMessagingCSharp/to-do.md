@@ -1,5 +1,6 @@
 # To Do
 - Set up MinerOwnedStates messaging
+  - GoHomeAndSleepTilRested Dispatch and OnMessage
 - Set up MinersWifeOwnedStates messaging
-- Fix the BaseGameEntity so that it has an Id field that increments a static NextValidId field whenver a new entity is created.
-- 
+  - WifesGlobalState OnMessage
+  - CookStew Dispatch and OnMessage
