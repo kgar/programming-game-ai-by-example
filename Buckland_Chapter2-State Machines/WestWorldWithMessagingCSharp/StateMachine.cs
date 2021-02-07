@@ -38,5 +38,11 @@ namespace WestWorldWithMessaging
 
             CurrentState.Enter(_owner);
         }
+
+        public bool HandleMessage(Telegram telegram)
+        {
+            return CurrentState?.OnMessage(_owner, telegram) == true ||
+                GlobalState?.OnMessage(_owner, telegram) == true;
+        }
     }
 }

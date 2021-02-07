@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace WestWorldWithMessaging
 {
-    internal static class Program
+    public static class Program
     {
         private static async Task Main()
         {

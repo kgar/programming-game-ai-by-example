@@ -21,11 +21,16 @@ namespace WestWorldWithMessaging
             StateMachine.Update();
         }
 
-        internal void Speak(string text)
+        public void Speak(string text)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"{EntityFunctions.GetNameOfEntity(Name)}: {text}");
             Console.ResetColor();
+        }
+
+        public override bool HandleMessage(Telegram telegram)
+        {
+            return StateMachine.HandleMessage(telegram);
         }
     }
 }

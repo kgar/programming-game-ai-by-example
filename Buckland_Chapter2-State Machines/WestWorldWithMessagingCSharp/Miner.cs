@@ -80,5 +80,10 @@ namespace WestWorldWithMessaging
             System.Console.WriteLine($"{EntityFunctions.GetNameOfEntity(Name)}: {text}");
             System.Console.ResetColor();
         }
+
+        public override bool HandleMessage(Telegram telegram)
+        {
+            return StateMachine.HandleMessage(telegram);
+        }
     }
 }

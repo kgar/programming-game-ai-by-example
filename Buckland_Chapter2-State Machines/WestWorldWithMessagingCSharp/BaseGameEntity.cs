@@ -1,12 +1,14 @@
 namespace WestWorldWithMessaging
 {
-    public class BaseGameEntity
+    public abstract class BaseGameEntity
     {
-        public BaseGameEntity(EntityName name)
+        protected BaseGameEntity(EntityName name)
         {
             Name = name;
         }
 
         public EntityName Name { get; }
+
+        public virtual bool HandleMessage(Telegram telegram) { return false;  }
     }
 }
