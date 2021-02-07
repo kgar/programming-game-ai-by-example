@@ -56,7 +56,7 @@ namespace WestWorldWithMessaging
 
         public static void Discharge(BaseGameEntity receiver, Telegram telegram)
         {
-            if (receiver.HandleMessage(telegram))
+            if (!receiver.HandleMessage(telegram))
             {
                 System.Console.WriteLine("Message not handled.");
             }
