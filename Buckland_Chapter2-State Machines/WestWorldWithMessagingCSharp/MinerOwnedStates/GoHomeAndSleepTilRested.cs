@@ -1,3 +1,5 @@
+using System;
+
 namespace WestWorldWithMessaging
 {
     public class GoHomeAndSleepTilRested : IState<Miner>
@@ -26,6 +28,12 @@ namespace WestWorldWithMessaging
             {
                 entity.Speak("Walkin' home");
                 entity.ChangeLocation(Location.Shack);
+
+                MessageDispatcher.DispatchMessage(
+                    MessageDispatcherConstants.SendNow,
+                    entity.Name,
+                    EntityName.Elsa,
+                    MessageType.HiHoneyImHome);
             }
         }
 
@@ -46,6 +54,19 @@ namespace WestWorldWithMessaging
         public void Exit(Miner entity)
         {
             entity.Speak("Leaving the house");
+        }
+
+        public bool OnMessage(Miner miner, Telegram message)
+        {
+            if (message.Message == MessageType.StewReady)
+            {
+                Console.WriteLine($"Message handled by {EntityFunctions.GetNameOfEntity(miner.Name)} at time: {DateTime.Now}");
+                miner.Speak("Okay Hun, ahm a comin'!");
+                miner.StateMachine.ChangeState(EatStew.Instance);
+                return true;
+            }
+
+            return false;
         }
     }
 }

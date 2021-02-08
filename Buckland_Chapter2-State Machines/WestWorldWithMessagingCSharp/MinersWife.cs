@@ -6,6 +6,7 @@ namespace WestWorldWithMessaging
     {
         public StateMachine<MinersWife> StateMachine { get; set; }
         public Location Location { get; set; }
+        public bool IsCooking { get; set; }
 
         public MinersWife(EntityName name) : base(name)
         {

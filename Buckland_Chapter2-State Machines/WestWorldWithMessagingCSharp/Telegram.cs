@@ -12,7 +12,7 @@ namespace WestWorldWithMessaging
     {
         public EntityName Sender { get; init; }
         public EntityName Receiver { get; init; }
-        public int Message { get; init; }
+        public MessageType Message { get; init; }
         public object ExtraInfo { get; init; }
         public DateTime DispatchTime { get; init; }
     }

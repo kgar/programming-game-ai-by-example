@@ -30,10 +30,25 @@ namespace WestWorldWithMessaging
 
         public void Execute(MinersWife entity)
         {
-            if (_random.NextDouble() < 0.1)
+            if (_random.NextDouble() < 0.1 && !entity.StateMachine.IsInState(VisitBathroom.Instance))
             {
                 entity.StateMachine.ChangeState(VisitBathroom.Instance);
             }
+        }
+
+        public bool OnMessage(MinersWife wife, Telegram message)
+        {
+            if (message.Message == MessageType.HiHoneyImHome)
+            {
+                System.Console.WriteLine($"Message handle by {EntityFunctions.GetNameOfEntity(wife.Name)} at time: {DateTime.Now}");
+
+                wife.Speak("Hi honey. Let me make you some of mah fine country stew");
+
+                wife.StateMachine.ChangeState(CookStew.Instance);
+                return true;
+            }
+
+            return false;
         }
     }
 }

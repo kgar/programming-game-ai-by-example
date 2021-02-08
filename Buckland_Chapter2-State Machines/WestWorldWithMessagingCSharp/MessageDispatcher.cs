@@ -23,7 +23,7 @@ namespace WestWorldWithMessaging
             }
         }
 
-        public static void DispatchMessage(TimeSpan delay, EntityName sender, EntityName receiver, int message, object extraInfo)
+        public static void DispatchMessage(TimeSpan delay, EntityName sender, EntityName receiver, MessageType message, object extraInfo = null)
         {
             var receiverEntity = EntityManager.GetEntityFromName(receiver);
 
